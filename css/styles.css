@@ -1,0 +1,18 @@
+.card-img-top {
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
+    cursor: pointer; /* Cambiar el cursor para indicar que la imagen es clicable */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px; /* Altura fija para el texto */
+}
+
+.card-title, .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
