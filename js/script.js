@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text">${product.description}</p>
                     </div>
                     <div class="card-footer">
                         <span class="text-left">Precio: ${product.price}</span>
