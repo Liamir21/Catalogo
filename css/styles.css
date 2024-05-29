@@ -12,7 +12,12 @@
 }
 
 .card-title, .card-text {
+    color: rgb(0, 38, 109);
+    text-decoration: none;
     overflow: hidden;
+    display: -webkit-box;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
 }
