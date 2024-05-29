@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const productList = document.getElementById('product-list');
     const searchInput = document.getElementById('search-input');
+    const categorySelect = document.getElementById('category-select');
     const modalImage = document.getElementById('modalImage');
 
     // Obtener el código del gestor desde la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const managerCode = urlParams.get('manager');
-    console.log(urlParams);
+    const managerCode = urlParams.get('manager') || '*'; // Por defecto '*' si no hay código de gestor
 
     // Función para cargar productos desde el archivo JSON
     fetch('data/products.json')
@@ -16,15 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Filtrar productos cuando se escribe en el campo de búsqueda
             searchInput.addEventListener('input', () => {
-                const query = searchInput.value.toLowerCase();
-                const filteredProducts = products.filter(product =>
-                    product.name.toLowerCase().includes(query) ||
-                    product.price.toLowerCase().includes(query)
-                );
-                renderProducts(filteredProducts);
+                filterProducts(products);
+            });
+
+            // Filtrar productos cuando se selecciona una categoría
+            categorySelect.addEventListener('change', () => {
+                filterProducts(products);
             });
         })
         .catch(error => console.error('Error al cargar los productos:', error));
+
+    function filterProducts(products) {
+        const query = searchInput.value.toLowerCase();
+        const selectedCategory = categorySelect.value;
+
+        const filteredProducts = products.filter(product => {
+            const matchesSearch = product.name.toLowerCase().includes(query) ||
+                                  product.price.toLowerCase().includes(query);
+            const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+
+            return matchesSearch && matchesCategory;
+        });
+
+        renderProducts(filteredProducts);
+    }
 
     function renderProducts(products) {
         productList.innerHTML = '';
@@ -41,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Ticket: ${managerCode}" target="_blank" class="btn btn-success">Preguntar</a>
+                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Código del gestor de ventas: ${managerCode}" target="_blank" class="btn btn-success">Preguntar</a>
                     </div>
                 </div>
             `;

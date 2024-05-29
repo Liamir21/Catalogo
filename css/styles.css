@@ -6,7 +6,7 @@
 }
 
 .card-img-top:hover {
-    transform: scale(1.5); /* Ampliar la imagen al pasar el mouse */
+    transform: scale(1.1); /* Ampliar la imagen al pasar el mouse */
     z-index: 1;
 }
 
