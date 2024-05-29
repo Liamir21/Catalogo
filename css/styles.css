@@ -21,3 +21,18 @@
     -webkit-box-orient: vertical;
     word-break: break-word;
 }
+
+.card .mt-auto {
+    margin-top: auto;
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

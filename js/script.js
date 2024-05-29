@@ -29,9 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             productItem.innerHTML = `
                 <div class="card h-100">
                     <img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text">Precio: ${product.price}</p>
+                        <p class="card-text">${product.description}</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="text-left">Precio: ${product.price}</span>
+                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name} " target="_blank" class="btn btn-success">Preguntar</a>
                     </div>
                 </div>
             `;
