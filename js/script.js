@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const modalImage = document.getElementById('modalImage');
 
+    // Obtener el código del gestor desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const managerCode = urlParams.get('manager');
+    console.log(urlParams);
+
     // Función para cargar productos desde el archivo JSON
     fetch('data/products.json')
         .then(response => response.json())
@@ -28,15 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
             productItem.classList.add('col-md-4', 'mb-4');
             productItem.innerHTML = `
                 <div class="card h-100">
-                <div class="overflow-hidden border border-bottom">
-                    <img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">
-                </div>    
+                    <div class="overflow-hidden border border-bottom">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${product.name}</h5>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name} " target="_blank" class="btn btn-success">Preguntar</a>
+                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Código del gestor de ventas: ${managerCode}" target="_blank" class="btn btn-success">Preguntar</a>
                     </div>
                 </div>
             `;
