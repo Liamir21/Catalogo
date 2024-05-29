@@ -2,6 +2,17 @@
     height: 200px; /* Altura fija para las imágenes */
     object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
     cursor: pointer; /* Cambiar el cursor para indicar que la imagen es clicable */
+    transition: transform 0.5s ease; /* Transición suave para el efecto de zoom */
+}
+
+.card-img-top:hover {
+    transform: scale(1.5); /* Ampliar la imagen al pasar el mouse */
+    z-index: 1;
+}
+
+.card {
+    overflow: hidden; /* Ocultar partes de la imagen que se salen del contenedor */
+    position: relative;
 }
 
 .card-body {
