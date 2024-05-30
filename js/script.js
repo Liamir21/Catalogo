@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Código del gestor de ventas: ${managerCode}" target="_blank" class="btn btn-success">Preguntar</a>
+                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Ticket: ${managerCode}" target="_blank" class="btn btn-success">Preguntar</a>
                     </div>
                 </div>
             `;
