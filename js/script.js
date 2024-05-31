@@ -140,19 +140,17 @@ Muchas gracias por su atención.
         const userAgent = navigator.userAgent.toLowerCase();
         let url;
 
-        // Intentar abrir la aplicación de WhatsApp primero
         if (/android|iphone|ipad|ipod/.test(userAgent)) {
+            // Dispositivos móviles
             url = `https://api.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
-        } else {
-            // Intentar abrir la aplicación de WhatsApp en escritorio
+        } else if (userAgent.indexOf('windows') !== -1 && userAgent.indexOf('whatsapp') !== -1) {
+            // Intentar abrir la aplicación de WhatsApp en Windows
             url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
-            
-            // Si falla, abrir la versión web después de un breve retraso
-            setTimeout(() => {
-                url = `https://web.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
-            }, 500);
+        } else {
+            // Escritorio
+            url = `https://web.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
         }
+
+        window.open(url, '_blank');
     };
 });
