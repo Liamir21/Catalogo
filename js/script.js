@@ -60,18 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
             let productImages = '';
             if (Array.isArray(product.image)) {
-                product.image.forEach((img, index) => {
-                    productImages += `
-                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                            <img src="${img}" class="d-block w-100" alt="${product.name}" onclick="showImageModal('${img}')">
-                        </div>
-                    `;
-                });
-    
-                productImages = `
+                productImages += `
                     <div id="carousel-${product.name.replace(/\s+/g, '-')}" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            ${productImages}
+                `;
+                product.image.forEach((img, index) => {
+                    productImages += `
+                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                <img src="${img}" class="d-block w-100" alt="${product.name}">
+                            </div>
+                        `;
+                });
+    
+                productImages += `
                         </div>
                         <a class="carousel-control-prev" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <button class="btn btn-success" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')">Pedir</button>
+                        <a href="#" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')" class="btn btn-success">Pedir</a>
                     </div>
                 </div>
             `;
@@ -128,35 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#imageModal').modal('show');
     };
 
-    // Función para enviar el mensaje de WhatsApp
     window.sendWhatsAppMessage = function(productName, price, managerCode) {
         const message = `Hola, estoy interesad@ en este artículo:
-    - Producto: ${productName}
-    - Precio: ${price}
-    Ticket: ${managerCode}
-    Muchas gracias por su atención.
-    `;
-    
-        const isWindows = navigator.userAgent.toLowerCase().includes('windows');
-        const isWhatsAppInstalled = navigator.userAgent.toLowerCase().includes('whatsapp');
-        const isAndroid = navigator.userAgent.toLowerCase().includes('android');
-    
-        let url;
-    
-        // Verificar si está en un entorno de escritorio y tiene la app instalada desde Microsoft Store
-        if (isWindows && isWhatsAppInstalled) {
-            url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
-        }
-        // Verificar si está en un dispositivo Android y tiene la app instalada
-        else if (isAndroid && isWhatsAppInstalled) {
-            url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
-        }
-        // Abrir la versión web en otros casos
-        else {
-            url = `https://web.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
-        }
-    
-        // Abrir en una nueva pestaña
+- Producto: ${productName}
+- Precio: ${price}
+Ticket: ${managerCode}
+Muchas gracias por su atención.
+`;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/54597905?text=${encodedMessage}`;
         window.open(url, '_blank');
     };
 });
