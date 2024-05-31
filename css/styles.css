@@ -1,11 +1,11 @@
-.card-img-top {
+.card-img-top, .carousel-item img {
     height: 200px; /* Altura fija para las imágenes */
     object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
     cursor: pointer; /* Cambiar el cursor para indicar que la imagen es clicable */
     transition: transform 0.5s ease; /* Transición suave para el efecto de zoom */
 }
 
-.card-img-top:hover {
+.card-img-top:hover, .carousel-item img:hover {
     transform: scale(1.1); /* Ampliar la imagen al pasar el mouse */
     z-index: 1;
 }

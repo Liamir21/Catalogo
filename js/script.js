@@ -46,10 +46,40 @@ document.addEventListener('DOMContentLoaded', () => {
         products.forEach(product => {
             const productItem = document.createElement('div');
             productItem.classList.add('col-md-4', 'mb-4');
+    
+            let productImages = '';
+            if (Array.isArray(product.image)) {
+                product.image.forEach((img, index) => {
+                    productImages += `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                            <img src="${img}" class="d-block w-100" alt="${product.name}">
+                        </div>
+                    `;
+                });
+    
+                productImages = `
+                    <div id="carousel-${product.name.replace(/\s+/g, '-')}" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            ${productImages}
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                `;
+            } else {
+                productImages = `<img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">`;
+            }
+    
             productItem.innerHTML = `
                 <div class="card h-100">
                     <div class="overflow-hidden border border-bottom">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">
+                        ${productImages}
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${product.name}</h5>
