@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+    const content = document.querySelector('.content');
     const productList = document.getElementById('product-list');
     const searchInput = document.getElementById('search-input');
     const categorySelect = document.getElementById('category-select');
     const modalImage = document.getElementById('modalImage');
+
+    // Mostrar el contenido cuando la página esté cargada al 90%
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            content.classList.remove('hidden');
+            content.classList.add('fade-in-up');
+        }, 1000); // Simulación de carga al 90%
+    });
 
     // Obtener el código del gestor desde la URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -45,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productList.innerHTML = '';
         products.forEach(product => {
             const productItem = document.createElement('div');
-            productItem.classList.add('col-md-4', 'mb-4');
+            productItem.classList.add('col-md-4', 'mb-4', 'fade-in-up-element');
     
             let productImages = '';
             if (Array.isArray(product.image)) {
@@ -91,6 +102,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             productList.appendChild(productItem);
+        });
+
+        observeProducts();
+    }
+
+    function observeProducts() {
+        const products = document.querySelectorAll('.fade-in-up-element');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        products.forEach(product => {
+            observer.observe(product);
         });
     }
 

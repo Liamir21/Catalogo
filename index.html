@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div id="loader" class="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+        <p>Cargando contenido...</p>
+    </div>
     <header class="bg-primary text-white text-center py-3">
         <h1>Catálogo</h1>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 content hidden">
         <div class="d-flex justify-content-between mb-4">
             <input type="text" id="search-input" class="form-control w-50" placeholder="Buscar producto...">
             <select id="category-select" class="form-control w-25">
@@ -23,11 +29,9 @@
                 <option value="Electronica">Electrónica</option>
                 <option value="Comida">Comida</option>
                 <option value="Otros">Otros</option>
-                <!-- Agrega más opciones de categorías según sea necesario -->
             </select>
         </div>
         <div class="row" id="product-list">
-            <!-- Productos serán renderizados aquí por JavaScript -->
         </div>
     </main>
 
