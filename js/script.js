@@ -131,26 +131,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para enviar el mensaje de WhatsApp
     window.sendWhatsAppMessage = function(productName, price, managerCode) {
         const message = `Hola, estoy interesad@ en este artículo:
-- Producto: ${productName}
-- Precio: ${price}
-Ticket: ${managerCode}
-Muchas gracias por su atención.
-`;
-
-        const userAgent = navigator.userAgent.toLowerCase();
+    - Producto: ${productName}
+    - Precio: ${price}
+    Ticket: ${managerCode}
+    Muchas gracias por su atención.
+    `;
+    
+        const isWindows = navigator.userAgent.toLowerCase().includes('windows');
+        const isWhatsAppInstalled = navigator.userAgent.toLowerCase().includes('whatsapp');
+        const isAndroid = navigator.userAgent.toLowerCase().includes('android');
+    
         let url;
-
-        if (/android|iphone|ipad|ipod/.test(userAgent)) {
-            // Dispositivos móviles
-            url = `https://api.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
-        } else if (userAgent.indexOf('windows') !== -1 && userAgent.indexOf('whatsapp') !== -1) {
-            // Intentar abrir la aplicación de WhatsApp en Windows
+    
+        // Verificar si está en un entorno de escritorio y tiene la app instalada desde Microsoft Store
+        if (isWindows && isWhatsAppInstalled) {
             url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
-        } else {
-            // Escritorio
+        }
+        // Verificar si está en un dispositivo Android y tiene la app instalada
+        else if (isAndroid && isWhatsAppInstalled) {
+            url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
+        }
+        // Abrir la versión web en otros casos
+        else {
             url = `https://web.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
         }
-
+    
+        // Abrir en una nueva pestaña
         window.open(url, '_blank');
     };
 });
