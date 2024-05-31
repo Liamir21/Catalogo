@@ -24,7 +24,6 @@
     {"price": "10 USD", "name": "Licras marmoleadas largas push up", "image": "img/licras_largas.jpg", "category": "Ropa" },
     {"price": "10 USD", "name": "Carteritas", "image": "img/carteras.jpg", "category": "Ropa" },
     {"price": "8-10 USD", "name": "Guantillas de Hombre y de Mujer", "image": "img/guantillas.jpg", "category": "Ropa" },
-    {"price": "12 USD", "name": "Bocina Pequeña Bluetooth, con Linterna, RGB, USB y Radio", "image": "img/bocina_linterna.jpg", "category": "Electronica"},
     {"price": "15 USD", "name": "Audífonos Casco Gaming 5.1", "image": "img/audifonos_gaming.jpg", "category": "PC"},
     {"price": "15 USD", "name": "Audífonos Casco Bluetooth (Blanco)", "image": "img/audifonos_casco_bluetooth.jpg", "category": "Electronica"},
     {"price": "15 USD", "name": "Bocinitas Speaker de PC y Laptop RGB", "image": "img/speakers.jpg", "category": "PC"},
