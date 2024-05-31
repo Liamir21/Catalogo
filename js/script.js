@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 product.image.forEach((img, index) => {
                     productImages += `
                         <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                            <img src="${img}" class="d-block w-100" alt="${product.name}">
+                            <img src="${img}" class="d-block w-100" alt="${product.name}" onclick="showImageModal('${img}')">
                         </div>
                     `;
                 });
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <a href="https://wa.me/54597905?text=Hola, estoy interesad@ en este artículo: ${product.name}. Ticket: ${managerCode}" target="_blank" class="btn btn-success">Pedir</a>
+                        <button class="btn btn-success" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')">Pedir</button>
                     </div>
                 </div>
             `;
@@ -126,5 +126,33 @@ document.addEventListener('DOMContentLoaded', () => {
     window.showImageModal = function(imageSrc) {
         modalImage.src = imageSrc;
         $('#imageModal').modal('show');
+    };
+
+    // Función para enviar el mensaje de WhatsApp
+    window.sendWhatsAppMessage = function(productName, price, managerCode) {
+        const message = `Hola, estoy interesad@ en este artículo:
+- Producto: ${productName}
+- Precio: ${price}
+Ticket: ${managerCode}
+Muchas gracias por su atención.
+`;
+
+        const userAgent = navigator.userAgent.toLowerCase();
+        let url;
+
+        // Intentar abrir la aplicación de WhatsApp primero
+        if (/android|iphone|ipad|ipod/.test(userAgent)) {
+            url = `https://api.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
+        } else {
+            // Intentar abrir la aplicación de WhatsApp en escritorio
+            url = `whatsapp://send?phone=54597905&text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+            
+            // Si falla, abrir la versión web después de un breve retraso
+            setTimeout(() => {
+                url = `https://web.whatsapp.com/send?phone=54597905&text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }, 500);
+        }
     };
 });
