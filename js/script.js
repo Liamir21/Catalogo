@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('theme-icon');
     const header = document.querySelector('header');
 
+    let managerPhoneNumber = '';
+
     // Mostrar el contenido cuando la página esté cargada al 90%
     window.addEventListener('load', () => {
         setTimeout(() => {
@@ -22,8 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const managerCode = urlParams.get('manager') || '*'; // Por defecto '*' si no hay código de gestor
 
-    // Función para cargar productos desde el archivo JSON
-    fetch('data/products.json')
+    // Cargar el archivo JSON de gestores
+    fetch('data/managers.json')
+        .then(response => response.json())
+        .then(managers => {
+            managerPhoneNumber = managers[managerCode] || managers['*'];
+
+            // Cargar productos desde el archivo JSON
+            return fetch('data/products.json');
+        })
         .then(response => response.json())
         .then(products => {
             renderProducts(products);
@@ -38,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterProducts(products);
             });
         })
-        .catch(error => console.error('Error al cargar los productos:', error));
+        .catch(error => console.error('Error al cargar los datos:', error));
 
     function filterProducts(products) {
         const query = searchInput.value.toLowerCase();
@@ -60,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         products.forEach(product => {
             const productItem = document.createElement('div');
             productItem.classList.add('col-md-4', 'mb-4', 'fade-in-up-element');
-    
+
             let productImages = '';
             if (Array.isArray(product.image)) {
                 productImages += `
@@ -74,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         `;
                 });
-    
+
                 productImages += `
                         </div>
                         <a class="carousel-control-prev" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data-slide="prev">
@@ -101,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-footer mt-auto">
                         <span class="text-left">Precio: ${product.price}</span>
-                        <a href="#" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')" class="btn btn-success">Pedir</a>
+                        <a href="#" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}', '${managerPhoneNumber}')" class="btn btn-success">Pedir</a>
                     </div>
                 </div>
             `;
@@ -132,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#imageModal').modal('show');
     };
 
-    window.sendWhatsAppMessage = function(productName, price, managerCode) {
+    window.sendWhatsAppMessage = function(productName, price, managerCode, phoneNumber) {
         const message = `Hola, estoy interesad@ en este artículo:
     - Producto: ${productName}
     - Precio: ${price}
@@ -140,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Muchas gracias por su atención.
     `;
         const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/54597905?text=${encodedMessage}`;
+        const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         window.open(url, '_blank');
     };
 
