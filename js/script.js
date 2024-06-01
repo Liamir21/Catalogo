@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const categorySelect = document.getElementById('category-select');
     const modalImage = document.getElementById('modalImage');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const header = document.querySelector('header');
 
     // Mostrar el contenido cuando la página esté cargada al 90%
     window.addEventListener('load', () => {
@@ -78,66 +81,78 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                `;
-            } else {
-                productImages = `<img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">`;
-            }
-    
-            productItem.innerHTML = `
-                <div class="card h-100">
-                    <div class="overflow-hidden border border-bottom">
-                        ${productImages}
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${product.name}</h5>
-                    </div>
-                    <div class="card-footer mt-auto">
-                        <span class="text-left">Precio: ${product.price}</span>
-                        <a href="#" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')" class="btn btn-success">Pedir</a>
-                    </div>
+                        <a class="carousel-control-next" href="#carousel-${product.name.replace(/\s+/g, '-')}" role="button" data
+                        -slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             `;
-            productList.appendChild(productItem);
+        } else {
+            productImages = `<img src="${product.image}" class="card-img-top" alt="${product.name}" onclick="showImageModal('${product.image}')">`;
+        }
+
+        productItem.innerHTML = `
+            <div class="card h-100">
+                <div class="overflow-hidden border border-bottom">
+                    ${productImages}
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${product.name}</h5>
+                </div>
+                <div class="card-footer mt-auto">
+                    <span class="text-left">Precio: ${product.price}</span>
+                    <a href="#" onclick="sendWhatsAppMessage('${product.name}', '${product.price}', '${managerCode}')" class="btn btn-success">Pedir</a>
+                </div>
+            </div>
+        `;
+        productList.appendChild(productItem);
+    });
+
+    observeProducts();
+}
+
+function observeProducts() {
+    const products = document.querySelectorAll('.fade-in-up-element');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
         });
+    });
 
-        observeProducts();
-    }
+    products.forEach(product => {
+        observer.observe(product);
+    });
+}
 
-    function observeProducts() {
-        const products = document.querySelectorAll('.fade-in-up-element');
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
+window.showImageModal = function(imageSrc) {
+    modalImage.src = imageSrc;
+    $('#imageModal').modal('show');
+};
 
-        products.forEach(product => {
-            observer.observe(product);
-        });
-    }
-
-    window.showImageModal = function(imageSrc) {
-        modalImage.src = imageSrc;
-        $('#imageModal').modal('show');
-    };
-
-    window.sendWhatsAppMessage = function(productName, price, managerCode) {
-        const message = `Hola, estoy interesad@ en este artículo:
+window.sendWhatsAppMessage = function(productName, price, managerCode) {
+    const message = `Hola, estoy interesad@ en este artículo:
 - Producto: ${productName}
 - Precio: ${price}
 Ticket: ${managerCode}
 Muchas gracias por su atención.
 `;
-        const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/54597905?text=${encodedMessage}`;
-        window.open(url, '_blank');
-    };
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/54597905?text=${encodedMessage}`;
+    window.open(url, '_blank');
+};
+
+// Cambiar entre modo claro y oscuro
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    header.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        themeIcon.textContent = 'light_mode';
+    } else {
+        themeIcon.textContent = 'dark_mode';
+    }
+});
 });

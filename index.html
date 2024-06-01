@@ -6,6 +6,7 @@
     <title>Catálogo de Productos</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,7 +17,14 @@
         <p>Cargando contenido...</p>
     </div>
     <header class="bg-primary text-white text-center py-3">
-        <h1>Catálogo</h1>
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="m-0">Catálogo</h1>
+            <div class="header-icons d-flex align-items-center">
+                <button id="theme-toggle"><i id="theme-icon" class="material-icons">dark_mode</i></button>
+                <a href="#" class="text-white">
+                </a>
+            </div>
+        </div>
     </header>
     <main class="container mt-4 content hidden">
         <div class="d-flex justify-content-between mb-4">

@@ -1,3 +1,16 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
 .loader {
     position: fixed;
     top: 0;
@@ -14,6 +27,48 @@
 
 .hidden {
     display: none;
+}
+
+header {
+    background: linear-gradient(135deg, #007bff, #000dff);
+}
+
+header.dark-mode {
+    background: linear-gradient(135deg, #0d0d0d, #333);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo h1 {
+    margin: 0;
+}
+
+.header-icons a,
+.header-icons button {
+    color: gray;
+    font-size: 20px;
+}
+
+#theme-toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#theme-toggle::before {
+    font-family: "Material Icons";
+    content: "dark_mode"; /* Icono del sol */
+    color: #ffc107;
+}
+
+body.dark-mode #theme-toggle::before {
+    content: "dark_mode"; /* Icono de la luna */
+    color: #f8f9fa;
 }
 
 .fade-in-up {
@@ -40,32 +95,40 @@
     transform: translateY(0);
 }
 
-.card-img-top, .carousel-item img {
-    height: 200px; /* Altura fija para las imágenes */
-    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
-    cursor: pointer; /* Cambiar el cursor para indicar que la imagen es clicable */
-    transition: transform 0.5s ease; /* Transición suave para el efecto de zoom */
-}
-
-.card-img-top:hover, .carousel-item img:hover {
-    transform: scale(1.1); /* Ampliar la imagen al pasar el mouse */
-    z-index: 1;
-}
-
 .card {
-    overflow: hidden; /* Ocultar partes de la imagen que se salen del contenedor */
+    overflow: hidden;
     position: relative;
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.card .card-img-top:hover {
+    transform: scale(1.1);
+    z-index: 1;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 150px; /* Altura fija para el texto */
+    height: 150px;
 }
 
-.card-title, .card-text {
-    color: rgb(0, 38, 109);
+.card-title,
+.card-text {
+    color: #00266d;
     text-decoration: none;
     overflow: hidden;
     display: -webkit-box;
@@ -73,6 +136,12 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-word;
+}
+
+body.dark-mode .card-title
+,
+body.dark-mode .card-text {
+    color: #ffffff;
 }
 
 .card .mt-auto {
@@ -88,4 +157,60 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.card-footer .btn {
+    color: #ffffff;
+}
+
+body.dark-mode .card-footer .btn {
+    color: #000000;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #444444;
+    border-color: #555555;
+}
+
+.input-group-text,
+.form-control {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .input-group-text,
+body.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.custom-select {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .custom-select {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+body.dark-mode .bg-primary {
+    background-color: #1e1e1e !important;
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+body.dark-mode .text-primary {
+    color: #b3b3b3 !important;
 }
