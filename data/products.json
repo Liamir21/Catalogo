@@ -19,7 +19,7 @@
   {"price": "5 USD", "name": "Calenticos tipo faja", "image": "img/calenticos_tipo_faja.jpg", "category":"Ropa"},
   {"price": "5 USD", "name": "Ajustadores deportivos", "image": "img/ajustadores_deportivos.jpg", "category":"Ropa"},
   {"price": "5 USD", "name": "Audífonos Manos libres Tipo C", "image": "img/akg_tipoC.jpg", "category": "Electronica"},
-  {"price": "6 USD", "name": "Monederos", "image": "img/monederos.jpg", "category":"Ropa"},
+  {"price": "6 USD", "name": "Monedero", "image": "img/monedero.jpg", "category":"Ropa"},
   {"price": "6 USD", "name": "Carteritas de mujer", "image": "img/carteritas_mujer.jpg", "category":"Ropa"},
   {"price": "6 USD", "name": "Juego de lencería", "image": "img/lenceria.jpg", "category": "Ropa" },
   {"price": "7 USD", "name": "Faja", "image": "img/faja.jpg", "category": "Ropa" },
