@@ -58,17 +58,26 @@ header.dark-mode {
     border: none;
     font-size: 24px;
     cursor: pointer;
+    outline: none; /* Quitar el borde al enfocarse */
+    box-shadow: none; /* Quitar el sombreado */
 }
 
-#theme-toggle::before {
-    font-family: "Material Icons";
-    content: "dark_mode"; /* Icono del sol */
-    color: #ffc107;
+#theme-toggle:focus {
+    outline: none; /* Quitar el borde al enfocarse */
+    box-shadow: none; /* Quitar el sombreado */
 }
 
-body.dark-mode #theme-toggle::before {
-    content: "dark_mode"; /* Icono de la luna */
-    color: #f8f9fa;
+#theme-toggle:active {
+    outline: none; /* Quitar el borde al activarse */
+    box-shadow: none; /* Quitar el sombreado */
+}
+
+.material-icons {
+    color: #ffc107; /* Icono del sol en amarillo */
+}
+
+body.dark-mode .material-icons {
+    color: #ffffff; /* Icono de la luna en blanco */
 }
 
 .fade-in-up {
@@ -138,8 +147,7 @@ body.dark-mode .card {
     word-break: break-word;
 }
 
-body.dark-mode .card-title
-,
+body.dark-mode .card-title,
 body.dark-mode .card-text {
     color: #ffffff;
 }
