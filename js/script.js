@@ -143,10 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.sendWhatsAppMessage = function(productName, price, managerCode, phoneNumber) {
         const message = `Hola, estoy interesad@ en este artículo:
-    - Producto: ${productName}
-    - Precio: ${price}
-    Ticket: ${managerCode}
-    Muchas gracias por su atención.
+- Producto: ${productName}
+- Precio: ${price}
+Ticket: ${managerCode}
+Muchas gracias por su atención.
     `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
