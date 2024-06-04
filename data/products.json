@@ -44,7 +44,7 @@
   {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado)", "image": "img/smartwatch.jpg", "category": "Electronica"},
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
   {"price": "25 USD", "name": "Kit Teclado de membrana RGB y Mouse Gaming RGB", "image": "img/kit_teclado_mouse.jpg", "category": "PC"},
-  {"price": "25 USD", "name": "Tenis #45, 44, 43, 42, 41, 40, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
+  {"price": "25 USD", "name": "Tenis #46, 45, 44, 43, 42, 41, 40, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
   {"price": "40 USD", "name": "Audífonos Gaming KAMYSEN 7.1, Cable enmallado", "image": "img/audifonos_kamysen.jpg", "category": "PC"},
   {"price": "60 USD", "name": "Teclado Mecánico Yeiyan con Reposamuñecas, Cable enmallado", "image": "img/teclado_yeiyan.jpg", "category": "PC"}
 ]
