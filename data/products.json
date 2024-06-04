@@ -41,7 +41,6 @@
   {"price": "15 USD", "name": "Audífonos Casco Gaming 5.1", "image": "img/audifonos_gaming.jpg", "category": "PC"},
   {"price": "15 USD", "name": "Audífonos Casco Bluetooth (Blanco)", "image": "img/audifonos_casco_bluetooth.jpg", "category": "Electronica"},
   {"price": "15 USD", "name": "Bocinitas Speaker de PC y Laptop RGB", "image": "img/speakers.jpg", "category": "PC"},
-  {"price": "15 USD", "name": "Cepillo con Secadora", "image": "img/cepillo_secadora.jpg", "category": "Electronica"},
   {"price": "15 USD", "name": "Cortadora de Vegetales", "image": "img/cortadora_vegetales.png", "category":"Otros"},
   {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado)", "image": "img/smartwatch.jpg", "category": "Electronica"},
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
