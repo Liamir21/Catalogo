@@ -41,6 +41,6 @@
   {"price": "15 USD", "name": "Cortadora de Vegetales", "image": "img/cortadora_vegetales.png", "category":"Otros"},
   {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado)", "image": "img/smartwatch.jpg", "category": "Electronica"},
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
-  {"price": "25 USD", "name": "Tenis #46, 45, 44, 43, 42, 41, 40, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
+  {"price": "25 USD", "name": "Tenis #46, 45, 44, 42, 41, 40, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
   {"price": "60 USD", "name": "Teclado Mecánico Yeiyan con Reposamuñecas, Cable enmallado", "image": "img/teclado_yeiyan.jpg", "category": "PC"}
 ]
