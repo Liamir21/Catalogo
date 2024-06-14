@@ -21,7 +21,6 @@
   {"price": "5 USD", "name": "Audífonos Manos libres Tipo C", "image": "img/akg_tipoC.jpg", "category": "Electronica"},
   {"price": "6 USD", "name": "Monedero", "image": "img/monedero.jpg", "category":"Ropa"},
   {"price": "6 USD", "name": "Carteritas de mujer", "image": "img/carteritas_mujer.jpg", "category":"Ropa"},
-  {"price": "6 USD", "name": "Juego de lencería", "image": "img/lenceria.jpg", "category": "Ropa" },
   {"price": "7 USD", "name": "Faja", "image": "img/faja.jpg", "category": "Ropa" },
   {"price": "8 USD", "name": "Licras cortas Push Up", "image": "img/licras_cortas.jpg", "category":"Ropa"},
   {"price": "8 USD", "name": "Mochilita de mujer", "image": "img/mochilita_mujer.jpg", "category":"Ropa"},
