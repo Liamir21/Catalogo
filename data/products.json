@@ -6,7 +6,6 @@
   {"price": "750 CUP", "name": "Audífonos manos libres", "image": "img/audifonos_manos_libres.jpg", "category": "Electronica"},
   {"price": "750 CUP", "name": "Paquete de 10 Cuchillas desechables", "image": "img/cuchillas_desechables.jpg", "category": "Otros"},
   {"price": "800 CUP", "name": "Tijeras", "image": "img/tijeras.jpg", "category":"Otros"},
-  {"price": "1400 CUP", "name": "Pomo de Pringles Grande(Cebolla)", "image": "img/pringles_grandes.jpg", "category": "Comida"},
   {"price": "2 USD", "name": "Medias Cortas de Marca", "image": "img/medias_cortas_marca.jpg", "category":"Ropa"},
   {"price": "3 USD", "name": "Medias Largas de Marca", "image": "img/medias_largas_marca.jpg", "category":"Ropa"},
   {"price": "3 USD", "name": "Calzoncillos levis", "image": "img/calzoncillos_levis.jpg", "category":"Ropa"},
