@@ -23,7 +23,6 @@
   {"price": "8 USD", "name": "Licras cortas Push Up", "image": "img/licras_cortas.jpg", "category":"Ropa"},
   {"price": "8 USD", "name": "Mochilita de mujer", "image": "img/mochilita_mujer.jpg", "category":"Ropa"},
   {"price": "8 USD", "name": "Máquina Trimmer", "image": "img/trimmer_chica.jpg", "category": "Electronica"},
-  {"price": "8 USD", "name": "Mouse Gaming de 7 botones uno de ellos Rapid-fire, con RGB y cable enmallado", "image": "img/mouse_gaming.jpg", "category": "PC"},
   {"price": "8 USD", "name": "Audífonos inalámbricos Bluetooth (Negro)", "image": "img/audifonos_bluetooth.jpg", "category": "Electronica"},
   {"price": "8 USD", "name": "Lencería negra de medias largas", "image": "img/vestido_lenceria.jpg", "category": "Ropa" },
   {"price": "8-10 USD", "name": "Guantillas de Hombre y de Mujer", "image": "img/guantillas.jpg", "category": "Ropa" },
