@@ -23,7 +23,6 @@
   {"price": "8 USD", "name": "Licras cortas Push Up", "image": "img/licras_cortas.jpg", "category":"Ropa"},
   {"price": "8 USD", "name": "Mochilita de mujer", "image": "img/mochilita_mujer.jpg", "category":"Ropa"},
   {"price": "8 USD", "name": "Máquina Trimmer", "image": "img/trimmer_chica.jpg", "category": "Electronica"},
-  {"price": "8 USD", "name": "Audífonos inalámbricos Bluetooth (Negro)", "image": "img/audifonos_bluetooth.jpg", "category": "Electronica"},
   {"price": "8 USD", "name": "Lencería negra de medias largas", "image": "img/vestido_lenceria.jpg", "category": "Ropa" },
   {"price": "8-10 USD", "name": "Guantillas de Hombre y de Mujer", "image": "img/guantillas.jpg", "category": "Ropa" },
   {"price": "10 USD", "name": "Pullover Talla XL (Más de 1 , 9 USD)", "image": "img/pullovers (14).jpg", "category": "Ropa"},
@@ -33,7 +32,7 @@
   {"price": "12 USD", "name": "Chancletas Calvin Klein", "image": "img/chancletas_ck.jpg", "category":"Ropa"},
   {"price": "15 USD", "name": "Bocinitas Speaker de PC y Laptop RGB", "image": "img/speakers.jpg", "category": "PC"},
   {"price": "15 USD", "name": "Cortadora de Vegetales", "image": "img/cortadora_vegetales.png", "category":"Otros"},
-  {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado)", "image": "img/smartwatch.jpg", "category": "Electronica"},
+  {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado, blanco)", "image": "img/smartwatch.jpg", "category": "Electronica"},
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
-  {"price": "25 USD", "name": "Tenis #45, 44, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"}
+  {"price": "25 USD", "name": "Tenis #29.5, 29, 25, 24.5, 24", "image": "img/tenis_nike.jpg", "category":"Ropa"}
 ]
