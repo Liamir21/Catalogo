@@ -26,7 +26,7 @@
   {"price": "8 USD", "name": "Máquina Trimmer", "image": "img/trimmer.jpg", "category": "Electronica"},
   {"price": "8-10 USD", "name": "Guantillas de Hombre y de Mujer", "image": "img/guantillas.jpg", "category": "Ropa" },
   {"price": "10 USD", "name": "Máquina trimmer/ Máquina Inalámbrica de afeitar", "image": "img/trimmer_panama.jpg", "category":"Electronica"},
-  {"price": "10 USD", "name": "Mouse Gaming RGB, 6 botones, DPI ajustable, Cable enmallado", "image": "img/mouse_x1,jpg", "category":"Computadoras"},
+  {"price": "10 USD", "name": "Mouse Gaming RGB, 6 botones, DPI ajustable, Cable enmallado", "image": "img/mouse_x1.jpg", "category":"Computadoras"},
   {"price": "10 USD", "name": "Pullover Talla XL (Más de 1 , 9 USD)", "image": "img/pullovers (14).jpg", "category": "Ropa"},
   {"price": "10 USD", "name": "Licras largas  Push Up", "image": "img/licras_largas.jpg", "category":"Ropa"},
   {"price": "10 USD", "name": "Carteritas", "image": "img/carteras.jpg", "category": "Ropa" },
