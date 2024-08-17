@@ -40,7 +40,7 @@
   {"price": "20 USD", "name": "Maquina de pelar PREMIER cuchilla de acero inoxidable", "image": "img/maquina_premier.jpg", "category":"Electrónica"},
   {"price": "25 USD", "name": "Tenis #45, 44, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
   {"price": "25 USD", "name": "Combo Gaming de Teclado de Membrana RGB y Mouse RGB", "image": "img/combo_tm.jpg", "category":"Computadoras"},
-  {"price": "30 USD", "name": "30 USD - Audífonos Gaming 5.1 con micrófono", "image": "img/audifonos_5.1.jpg", "category":"Computadoras"},
+  {"price": "30 USD", "name": "Audífonos Gaming 5.1 con micrófono", "image": "img/audifonos_5.1.jpg", "category":"Computadoras"},
   {"price": "40 USD", "name": "Combo Inalámbrico (Batería de lithium) Gaming Teclado de membrana RGB y Mouse RGB", "image": "img/combo_inal_tm.jpg", "category":"Computadoras"},
   {"price": "120 USD", "name": "Tecno Spark GO 2024, 3+3 GB RAM, 64 GB de espacio, Dual SIM + Mica, Audifonos y 2 Forros", "image": "img/tecno_spark_go.jpg", "category":"Electrónica"}
 ]
