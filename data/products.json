@@ -35,7 +35,6 @@
   {"price": "12 USD", "name": "Chancletas Calvin Klein", "image": "img/chancletas_ck.jpg", "category":"Ropa"},
   {"price": "15 USD", "name": "Cortadora de Vegetales", "image": "img/cortadora_vegetales.png", "category":"Otros"},
   {"price": "15 USD", "name": "Cepillo con Secadora", "image": "img/cepillo_secadora.jpg", "category":"Electrónica"},
-  {"price": "15 USD", "name": "Smartwatch (Solo Disponible Rosado)", "image": "img/smartwatch.jpg", "category":"Electrónica"},
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
   {"price": "20 USD", "name": "Maquina de pelar PREMIER cuchilla de acero inoxidable", "image": "img/maquina_premier.jpg", "category":"Electrónica"},
   {"price": "25 USD", "name": "Tenis #45, 44, 39, 38", "image": "img/tenis_nike.jpg", "category":"Ropa"},
