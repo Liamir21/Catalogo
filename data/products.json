@@ -32,7 +32,6 @@
   {"price": "16 USD", "name": "Mochilta de mujer de material", "image": "img/mochilita_material.jpg", "category":"Ropa"},
   {"price": "25 USD", "name": "Tenis #45, 44, 40, 39", "image": "img/tenis_nike.jpg", "category":"Ropa"},
   {"price": "30 USD", "name": "Audífonos Gaming 5.1 con micrófono", "image": "img/audifonos_5.1.jpg", "category":"Computadoras"},
-  {"price": "40 USD", "name": "Combo Inalámbrico (Batería de lithium) Gaming Teclado de membrana RGB y Mouse RGB", "image": "img/combo_inal_tm.jpg", "category":"Computadoras"},
   {"price": "60 USD", "name": "Ventilador Recargable 12 pulgadas con panel solar y 2 Bombillos", "image": "img/ventilador_recargable_panama.jpg", "category":"Electrónica"},
   {"price": "120 USD", "name": "Tecno Spark GO 2024, 3+3 GB RAM, 64 GB de espacio, Dual SIM + Mica, Audifonos y 2 Forros", "image": "img/tecno_spark_go.jpg", "category":"Electrónica"}
 ]
